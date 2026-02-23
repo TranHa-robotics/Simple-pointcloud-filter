@@ -45,3 +45,6 @@ target_link_libraries(Filters PUBLIC FilterInterface) # Kế thừa interface
 # --- 5. Tests ---
 add_executable(TestPointCloud tests/TestPointCloud.cpp)
 target_link_libraries(TestPointCloud PRIVATE Core Filters)
+
+add_executable(TestPassThroughFilter tests/TestPassThroughFilter.cpp)
+target_link_libraries(TestPassThroughFilter PRIVATE Core Filters)
