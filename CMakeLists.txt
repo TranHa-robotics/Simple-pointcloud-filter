@@ -48,3 +48,6 @@ target_link_libraries(TestPointCloud PRIVATE Core Filters)
 
 add_executable(TestPassThroughFilter tests/TestPassThroughFilter.cpp)
 target_link_libraries(TestPassThroughFilter PRIVATE Core Filters)
+
+add_executable(TestVoxelGridFilter tests/TestVoxelGridFilter.cpp)
+target_link_libraries(TestVoxelGridFilter PRIVATE Core Filters)

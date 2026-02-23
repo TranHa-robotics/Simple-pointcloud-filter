@@ -1,20 +1,22 @@
 #pragma once
 #include "Filters/IFilter.hpp"
 
-namespace PCP {
-    
-    class PassThrough : public IFilter {
-        public:
-            // Khoi tao gioi han min/max cua truc z 
-            PassThrough(float min_z, float max_z);
+namespace PCP
+{
 
-            // bat buoc override tu IFilter
-            void apply(PointCloud& cloud) override;
+    class PassThrough : public IFilter
+    {
+    public:
+        // Khoi tao gioi han min/max cua truc z
+        PassThrough(float min_z, float max_z);
 
-            std::string getName() const override { return "PassThrough Filter";}
+        // bat buoc override tu IFilter
+        void apply(PointCloud &cloud) override;
 
-        private:
-            float min_z_;
-            float max_z_;
+        std::string getName() const override { return "PassThrough Filter"; }
+
+    private:
+        float min_z_;
+        float max_z_;
     };
 }
