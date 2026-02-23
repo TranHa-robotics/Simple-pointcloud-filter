@@ -39,8 +39,8 @@ add_library(Filters STATIC
 target_link_libraries(Filters PUBLIC FilterInterface) # Kế thừa interface
 
 # --- 4. Main App ---
-# add_executable(main src/main.cpp)
-# target_link_libraries(main PRIVATE Core Filters)
+add_executable(main src/main.cpp)
+target_link_libraries(main PRIVATE Core Filters)
 
 # --- 5. Tests ---
 add_executable(TestPointCloud tests/TestPointCloud.cpp)
