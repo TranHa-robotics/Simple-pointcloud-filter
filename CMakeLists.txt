@@ -21,6 +21,7 @@ find_package(Eigen3 REQUIRED)
 add_library(Core STATIC
     src/Core/PointCloud.cpp
     src/Core/Pipeline.cpp 
+    include/Core/Timer.hpp
 )
 
 target_include_directories(Core PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/include)
