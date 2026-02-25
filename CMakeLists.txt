@@ -52,3 +52,25 @@ target_link_libraries(TestPassThroughFilter PRIVATE Core Filters)
 
 add_executable(TestVoxelGridFilter tests/TestVoxelGridFilter.cpp)
 target_link_libraries(TestVoxelGridFilter PRIVATE Core Filters)
+
+# --- 6. Unit Testing voi GoogleTest (Modern CMake)
+# ================
+include(FetchContent)
+FetchContent_Declare(
+    googletest 
+    URL https://github.com/google/googletest/archive/refs/tags/v1.14.0.zip
+)
+# bo qua cac canh bao khong can thiet cua thu vien ngoafi
+
+set(gtest_force_shared_crt ON CACHE BOOL "" FORCE)
+FetchContent_MakeAvailable(googletest)
+
+# file thuc thi rieng cho Test 
+add_executable(TestFilters tests/TestFilters.cpp)
+
+# Link voi Core, Filters va thu vien gtest_main (chua san ham main() cho test)
+target_link_libraries(TestFilters PRIVATE Core Filters GTest::gtest_main)
+
+# Bat tinh nang testing cua Cmake (CTest)
+include(CTest)
+add_test(NAME FilterLogicTests COMMAND TestFilters)
